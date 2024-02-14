@@ -8,7 +8,7 @@ resource "aws_iam_user" "new_user" {
     }
 }
 resource "aws_s3_bucket" "new_bucket" {
-  bucket = "my-tf-test-bucket"
+  bucket = "terraform-bucket"
   tags = {
     Name        = "New-Bucket"
     Environment = "Dev"
