@@ -1,4 +1,4 @@
-[11:18 PM, 2/14/2024] Sahil BCA College: provider "aws" {
+provider "aws" {
     region = "ap-south-1"
 }
 
