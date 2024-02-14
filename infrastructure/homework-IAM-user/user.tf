@@ -1,11 +1,10 @@
-provider "aws" {
-    region "ap-northeast-3"
+provider  "aws"  {
+  region "ap-northeast-3"
 }
 
 resource "aws_iam_user" "tf" {
     name = "terraform_user"
-
-   tags = {
+    tags = {
     tag-key = "tag-value" 
    }
 }
