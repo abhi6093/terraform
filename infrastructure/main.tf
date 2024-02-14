@@ -1,5 +1,5 @@
 provider "aws" {
-    region = "ap-northeast-3"
+    region = "ap-northeast-3a"
 }
 resource "aws_vpc" "my_vpc" {
     cidr_block = var.vpc_cidr
