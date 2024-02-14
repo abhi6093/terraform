@@ -1,21 +1,25 @@
-provider "aws" {
-    region = "ap-northeast-3"
+[11:18 PM, 2/14/2024] Sahil BCA College: provider "aws" {
+    region = "ap-south-1"
 }
 
-resource "aws_iam_user" "nu" {
-  name = "new-user"
+resource "aws_iam_user" "lb" {
+  name = "loadbalancer"
+  path = "/system/"
+
   tags = {
     tag-key = "tag-value"
   }
 }
 
-resource "aws_s3_bucket" "CB" {
+resource "aws_s3_bucket" "A" {
   bucket = "var.s3-bucket-name"
   tags = {
-    Name        = "new-bucket"
+    Name        = "My bucket"
     Environment = "Dev"
   }
+
 }  
+
 
 resource "aws_iam_policy" "s3_access_policy" {
   name        = "s3_access_policy"
@@ -32,8 +36,8 @@ resource "aws_iam_policy" "s3_access_policy" {
           "s3:ListBucket",
         ],
         Resource = [
-          aws_s3_bucket.CB.arn,
-          "${aws_s3_bucket.CB.arn}/*",
+          aws_s3_bucket.A.arn,
+          "${aws_s3_bucket.A.arn}/*",
         ],
       },
     ],
@@ -41,10 +45,10 @@ resource "aws_iam_policy" "s3_access_policy" {
 }
 
 resource "aws_iam_user_policy_attachment" "s3_access_attachment" {
-  user       = aws_iam_user.nu.name
+  user       = aws_iam_user.lb.name
   policy_arn = aws_iam_policy.s3_access_policy.arn
 }
-
-variable "s3-bucket-name" {
-  default = "bucket-from-terraform"
+ variable "s3-bucket-name" {
+  type    = string
+  default = "my-tf-test-bucket0707"
 }
