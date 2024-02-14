@@ -22,7 +22,7 @@ variable "image_id" {
     default = "ami-05ff0b3a7128cd6f8"
 }
 variable "instance_type" {
-    default = "t2.micro"
+    default = "t3.micro"
 }
 variable "key_pair" {
     default = "terraform_key"
