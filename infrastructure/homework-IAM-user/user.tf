@@ -45,6 +45,6 @@ resource "aws_iam_user_policy_attachment" "s3_access_attachment" {
   policy_arn = aws_iam_policy.s3_access_policy.arn
 }
 
-variable "s3-bucket-name" {
+*/variable "s3-bucket-name" {
   default = "bucket-from-terraform"
-}
+}*/
