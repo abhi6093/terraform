@@ -11,7 +11,6 @@ resource "aws_iam_user" "nu" {
 
 resource "aws_s3_bucket" "CB" {
   bucket = "var.s3-bucket-name"
-  acl = public
   tags = {
     Name        = "new-bucket"
     Environment = "Dev"
