@@ -9,7 +9,7 @@ resource "aws_iam_user" "nu" {
   }
 }
 
-resource "aws_s3_bucket" "CB" {
+resource "aws_s3_bucket" "CD" {
   bucket = "s3-bucket"
   tags = {
     Name        = "new-bucket"
@@ -32,8 +32,8 @@ resource "aws_iam_policy" "s3_access_policy" {
           "s3:ListBucket",
         ],
         Resource = [
-          aws_s3_bucket.CB.arn,
-          "${aws_s3_bucket.CB.arn}/*",
+          aws_s3_bucket.CD.arn,
+          "${aws_s3_bucket.CD.arn}/*",
         ],
       },
     ],
