@@ -56,7 +56,7 @@ vpc_config {
     subnet_ids = [aws_subnet.subnet_1.id, aws_subnet.subnet_2.id]
 }
 depends_on = [
-    aws_iam_role_policy_attachment.example-AmazonEKSClusterPolicy,
+    aws_iam_role_policy_attachment.eks_cluster-AmazonEKSClusterPolicy,
     aws_iam_role_policy_attachment.example-AmazonEKSVPCResourceController,
   ]
 }
@@ -66,7 +66,7 @@ resource "aws_iam_role_policy_attachment" "eks_cluster" {
   role       = aws_iam_role.eks_role.name
 }
 
-resource "aws_iam_role_policy_attachment" "eks_cluster" {
+resource "aws_iam_role_policy_attachment" "example" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSVPCResourceController"
   role       = aws_iam_role.eks_role.name
 }
