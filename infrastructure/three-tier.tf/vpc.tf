@@ -1,8 +1,5 @@
-provider "aws" {
-    region ="ap-northeast-3"
-}
 
-resource "aws_vpc"  "project-vpc" {
+resource "aws_vpc"  "projectvpc" {
     cidr blocks = "${var.vpc_cidr}"
     instance_tenancy = "default"
 
