@@ -57,7 +57,6 @@ resource "aws_instance" "my_instance" {
 
     provisioner "local-exec" {
         command = "echo '<h1> Hello World Welcome to India' > index.html"
-        # command = "echo ${self.public_ip} >> ips.txt"
     }
 
     provisioner "file" {
