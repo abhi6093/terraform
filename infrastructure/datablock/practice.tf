@@ -42,16 +42,16 @@ resource "aws_instance" "my_instance" {
 
     connection {
         type     = "ssh"
-        user     = "root"
+        user     = "ec2-user"
         private_key = file("./private.pem")
         host     = self.public_ip
     }
 
     provisioner "remote-exec" {
     inline = [
-        "yum install httpd -y",
-        "systemctl start httpd",
-        "systemctl enable httpd"
+        "sudo yum install httpd -y",
+        "sudo systemctl start httpd",
+        "sudo systemctl enable httpd"
         ]
     }
 
