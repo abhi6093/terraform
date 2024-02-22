@@ -35,7 +35,7 @@ resource "aws_security_group_rule" "allow_http" {
 }
 
 resource "aws_instance" "my_instance" {
-    ami = "ami-0440d3b780d96b29d"
+    ami = "ami-01ecbd5f4434e80f0"
     instance_type = "t3.micro"
     key_name = "osaka-key"
     vpc_security_group_ids = [data.aws_security_group.existing_sg.id]
