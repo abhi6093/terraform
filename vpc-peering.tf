@@ -24,4 +24,5 @@ resource "aws_vpc_peering_connection_options" "appectingvpc" {
   }
    requester {
     allow_dns_resolution_from_remote_vpc = true
+ }
 }
