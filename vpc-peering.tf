@@ -1,5 +1,5 @@
 provider "aws" {
-    region "ap-northeast-3
+    region = "ap-northeast-3"
     }
     
 "resource "aws_vpc" "vpc1" {
